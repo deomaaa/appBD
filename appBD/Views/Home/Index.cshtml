@@ -1,0 +1,20 @@
+﻿@model IEnumerable<appBD.Models.User>
+@{
+    ViewData["Title"] = "Список всех пользователей";
+}
+
+<p><a asp-action="Create">Добавить пользователя</a></p>
+<table class="table">
+    <tr><th>Id</th><th>Name</th><th>Sername</th><th>Email</th><th>Gender</th><th>Birthday</th></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.first_name</td>
+            <td>@item.last_name</td>
+            <td>@item.email</td>
+            <td>@item.gender</td>
+            <td>@item.date_of_birth</td>
+        </tr>
+    }
+</table>
